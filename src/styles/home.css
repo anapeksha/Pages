@@ -11,6 +11,11 @@
 	background-color: #212122;
 }
 
-.home-welcome-text{
+.home-welcome-text {
 	color: #a9ccff;
+	text-align: center;
+}
+
+.MuiSvgIcon-root:hover {
+	color: #90b2e0;
 }
