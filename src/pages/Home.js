@@ -1,8 +1,8 @@
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import { Box, IconButton, Typography } from "@mui/material";
 import "animate.css";
-import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/home.css";
 
 const Home = () => {
@@ -11,20 +11,25 @@ const Home = () => {
 		button: "",
 	});
 
+	const navigate = useNavigate();
+
 	const handleClick = () => {
 		addClasses({
 			text: "animate__animated animate__fadeOutUp animate__slow",
 			button: "animate__animated animate__fadeOutDown animate__slow",
 		});
+
+		setTimeout(() => {
+			handleNavigate();
+		}, 2100);
 	};
 
-	useEffect(() => {
-		setTimeout(() => {});
-	}, [animatedClass]);
+	const handleNavigate = () => {
+		navigate("add-note");
+	};
 
 	return (
 		<div>
-			<Navbar />
 			<Box className="home-body">
 				<Box className={animatedClass.text}>
 					<Typography variant="h2" className="home-welcome-text">
