@@ -38,79 +38,90 @@ const CustomButton = styled(Button)({
 		borderColor: "#8aabd6",
 	},
 	"&:focus": {
-		boxShadow: "0 0 0 0.2rem rgb(138 171 214)",
+		boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
 	},
 });
 
 const Form = (props) => {
+    
+	const handleChange = (event) => {
+		const name = event.target.name;
+		const value = event.target.value;
+		props.setInput({ ...props.input, [name]: value });
+	};
+
 	return (
-		<div>
-			<Box className="form-body">
-				<Box className="form animate__animated animate__fadeIn animate__slow">
-					<Typography
-						variant="h5"
-						style={{ textAlign: "center", color: "#a9ccff" }}
-					>
-						Add Note
-					</Typography>
-					<FormGroup>
-						<form onSubmit={props.handleSubmit}>
-							<CustomTextField
-								size="medium"
-								label="Title"
-								style={{
-									marginTop: "0.5em",
-									marginRight: "0.5em",
-									marginLeft: "0.5em",
-								}}
-								sx={{
-									input: {
-										color: "#a9ccff",
-									},
-									label: {
-										color: "#a9ccff",
-									},
-								}}
-								onChange={props.handleChange}
-							/>
-							<CustomTextField
-								label="Note"
-								size="medium"
-								multiline
-								rows={15}
-								style={{
-									marginTop: "0.5em",
-									marginRight: "0.5em",
-									marginLeft: "0.5em",
-								}}
-								sx={{
-									textarea: {
-										color: "#a9ccff",
-									},
-									label: {
-										color: "#a9ccff",
-									},
-								}}
-								onChange={props.handleChange}
-							/>
-							<CustomButton
-								type="submit"
-								style={{
-									marginTop: "0.5em",
-									marginRight: "0.5em",
-									marginLeft: "0.5em",
-								}}
-								sx={{
-									color: "black",
-								}}
-							>
-								Add
-							</CustomButton>
-						</form>
-					</FormGroup>
-				</Box>
+		<Box className="form-body">
+			<Box className="form animate__animated animate__fadeIn animate__slow">
+				<Typography
+					variant="h5"
+					style={{ textAlign: "center", color: "#a9ccff" }}
+				>
+					Add Page
+				</Typography>
+				<FormGroup>
+					<form onSubmit={props.handleSubmit}>
+						<CustomTextField
+							size="medium"
+							label="Title"
+							name="title"
+							value={props.input.title}
+							style={{
+								marginTop: "0.75em",
+								marginRight: "0.5em",
+								marginLeft: "0.5em",
+							}}
+							sx={{
+								input: {
+									color: "#a9ccff",
+								},
+								label: {
+									color: "#a9ccff",
+								},
+							}}
+							onChange={handleChange}
+						/>
+						<CustomTextField
+							label="Note"
+							size="medium"
+							name="content"
+							value={props.input.content}
+							multiline
+							minRows={5}
+							maxRows={15}
+							style={{
+								marginTop: "0.75em",
+								marginRight: "0.5em",
+								marginLeft: "0.5em",
+							}}
+							sx={{
+								textarea: {
+									color: "#a9ccff",
+								},
+								label: {
+									color: "#a9ccff",
+								},
+							}}
+							onChange={handleChange}
+						/>
+						<CustomButton
+							type="submit"
+							style={{
+								marginTop: "0.75em",
+								marginRight: "0.5em",
+								marginLeft: "0.5em",
+							}}
+							sx={{
+								color: "#212122",
+								fontWeight: "700",
+							}}
+						>
+							Add
+						</CustomButton>
+					</form>
+				</FormGroup>
 			</Box>
-		</div>
+		</Box>
 	);
 };
 
