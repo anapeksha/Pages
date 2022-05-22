@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "../components/Form";
 import setData from "../controllers/setData";
 
@@ -8,15 +8,16 @@ const AddNote = () => {
 		content: "",
 	});
 
-	const [page, setPages] = useState([]);
+	const [pages, setPages] = useState([]);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(input.title, input.content);
-		setPages([...page, input]);
-		console.log(page);
-		setData(page);
+		setPages([...pages, input]);
 	};
+
+	useEffect(() => {
+		setData(pages);
+	}, [pages]);
 
 	return (
 		<div>
