@@ -2,6 +2,7 @@ import { Box, Button, FormGroup, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import "animate.css";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/form.css";
 
 const CustomTextField = styled(TextField)({
@@ -43,16 +44,17 @@ const CustomButton = styled(Button)({
 });
 
 const Form = (props) => {
-    
 	const handleChange = (event) => {
 		const name = event.target.name;
 		const value = event.target.value;
 		props.setInput({ ...props.input, [name]: value });
 	};
 
+	const navigate = useNavigate();
+
 	return (
 		<Box className="form-body">
-			<Box className="form animate__animated animate__fadeIn animate__slow">
+			<Box className="form animate__animated animate__zoomIn animate__fast">
 				<Typography
 					variant="h5"
 					style={{ textAlign: "center", color: "#a9ccff" }}
