@@ -56,7 +56,7 @@ const Home = () => {
 						sx={{ mr: 2, color: "#a9ccff" }}
 						onClick={handleClick}
 					>
-						<DriveFileRenameOutlineRoundedIcon fontSize="inherit" />
+						<DriveFileRenameOutlineRoundedIcon fontSize="large" />
 					</IconButton>
 				</Box>
 			</Box>
