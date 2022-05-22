@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import Form from "../components/Form";
-import setData from "../controllers/setData";
+import { addNote } from "../redux/reducers/noteReducer";
 
 const AddNote = () => {
 	const [input, setInput] = useState({
@@ -10,16 +11,12 @@ const AddNote = () => {
 		date: Date,
 	});
 
-	const [pages, setPages] = useState([]);
+	const dispatch = useDispatch();
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		setPages([...pages, input]);
+		dispatch(addNote(input));
 	};
-
-	useEffect(() => {
-		setData(pages);
-	}, [pages]);
 
 	return (
 		<div>
