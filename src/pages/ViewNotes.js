@@ -1,32 +1,30 @@
 import { Box, Grid } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import BasicCard from "../components/BasicCard";
-import getData from "../controllers/getData";
+import { deleteNote } from "../redux/reducers/noteReducer";
 import "../styles/view-notes.css";
 
 const ViewNotes = () => {
-	const [notes, setNotes] = useState([]);
+	const notes = useSelector((state) => state.note.notes);
 
-	useEffect(() => {
-		getData.then((data) => {
-			setNotes(data);
-		});
-	}, []);
+	const dispatch = useDispatch();
 
 	const notesDisplay = () => {
-		if (notes !== null) {
-			return notes.map((note) => {
-				return (
-					<Grid item xs={6} sm={6} md={6}>
-						<BasicCard
-							title={note.title}
-							date={note.date}
-							content={note.content}
-						/>
-					</Grid>
-				);
-			});
-		}
+		//@ts-ignore
+		return notes.map((note, i) => {
+			return (
+				<Grid item xs={6} sm={6} md={6}>
+					<BasicCard
+						title={note.title}
+						date={note.date}
+						content={note.content}
+						key={i}
+						handleDelete={() => dispatch(deleteNote(note))}
+					/>
+				</Grid>
+			);
+		});
 	};
 
 	return (
