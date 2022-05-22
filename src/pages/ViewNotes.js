@@ -6,6 +6,7 @@ import { deleteNote } from "../redux/reducers/noteReducer";
 import "../styles/view-notes.css";
 
 const ViewNotes = () => {
+	//@ts-ignore
 	const notes = useSelector((state) => state.note.notes);
 
 	const dispatch = useDispatch();
