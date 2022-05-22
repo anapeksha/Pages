@@ -4,8 +4,10 @@ import setData from "../controllers/setData";
 
 const AddNote = () => {
 	const [input, setInput] = useState({
+		id: "",
 		title: "",
 		content: "",
+		date: Date,
 	});
 
 	const [pages, setPages] = useState([]);
