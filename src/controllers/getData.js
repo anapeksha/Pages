@@ -3,7 +3,7 @@ const getData = new Promise((resolve, reject) => {
 	if (notes) {
 		resolve(notes);
 	} else {
-		reject("Error");
+		reject(null);
 	}
 });
 
