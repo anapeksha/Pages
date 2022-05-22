@@ -19,7 +19,11 @@ const BasicCard = (props) => {
 				<Typography variant="body2">{props.content}</Typography>
 			</CardContent>
 			<CardActions>
-				<IconButton aria-label="delete-note" size="small">
+				<IconButton
+					aria-label="delete-note"
+					size="small"
+					onClick={props.handleDelete}
+				>
 					<DeleteIcon fontSize="inherit" />
 				</IconButton>
 			</CardActions>
