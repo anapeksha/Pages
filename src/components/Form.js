@@ -1,8 +1,8 @@
 import { Box, Button, FormGroup, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import "animate.css";
+import { nanoid } from "nanoid";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "../styles/form.css";
 
 const CustomTextField = styled(TextField)({
@@ -47,10 +47,16 @@ const Form = (props) => {
 	const handleChange = (event) => {
 		const name = event.target.name;
 		const value = event.target.value;
-		props.setInput({ ...props.input, [name]: value });
+		var currentDate = new Date();
+		currentDate.toLocaleDateString();
+		var newID = nanoid();
+		props.setInput({
+			...props.input,
+			id: newID,
+			date: currentDate,
+			[name]: value,
+		});
 	};
-
-	const navigate = useNavigate();
 
 	return (
 		<Box className="form-body">
