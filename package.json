@@ -11,7 +11,6 @@
 		"@reduxjs/toolkit": "^1.8.1",
 		"animate.css": "^4.1.1",
 		"date-format": "^4.0.10",
-		"gh-pages": "^4.0.0",
 		"nanoid": "^3.3.4",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0",
@@ -61,6 +60,7 @@
 	"devDependencies": {
 		"@testing-library/jest-dom": "^5.16.4",
 		"@testing-library/react": "^13.2.0",
-		"@testing-library/user-event": "^14.2.0"
+		"@testing-library/user-event": "^14.2.0",
+		"gh-pages": "^4.0.0"
 	}
 }
