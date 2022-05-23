@@ -18,7 +18,7 @@ const Navbar = () => {
 							<DriveFileRenameOutlineTwoToneIcon style={{ color: "#a9ccff" }} />
 						</Link>
 					</Box>
-					<Link to="/Pages">
+					<Link to="/Pages" style={{ textDecoration: "none" }}>
 						<Typography variant="h6" component="div" sx={{ color: "#a9ccff" }}>
 							<strong>Pages</strong>
 						</Typography>
