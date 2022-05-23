@@ -5195,6 +5195,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-format@npm:^4.0.10":
+  version: 4.0.10
+  resolution: "date-format@npm:4.0.10"
+  checksum: 677c8e022a5efcead2c869d18b3b1a3b61df6c2c464545ec91e68ea890088dae7704e5822009af420ea8bb26325ffce01be599cc9f087879ea4aefc70a964c7b
+  languageName: node
+  linkType: hard
+
 "debug@npm:2.6.9, debug@npm:^2.6.0, debug@npm:^2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -9418,6 +9425,7 @@ __metadata:
     "@testing-library/react": ^13.2.0
     "@testing-library/user-event": ^14.2.0
     animate.css: ^4.1.1
+    date-format: ^4.0.10
     gh-pages: ^4.0.0
     nanoid: ^3.3.4
     react: ^18.1.0
