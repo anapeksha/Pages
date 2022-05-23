@@ -1,6 +1,7 @@
 import { Box, Button, FormGroup, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import "animate.css";
+import format from "date-format";
 import { nanoid } from "nanoid";
 import React from "react";
 import "../styles/form.css";
@@ -47,8 +48,7 @@ const Form = (props) => {
 	const handleChange = (event) => {
 		const name = event.target.name;
 		const value = event.target.value;
-		var currentDate = new Date();
-		currentDate.toLocaleDateString();
+		var currentDate = format.asString("dd/MM/yyyy - hh:mm", new Date());
 		var newID = nanoid();
 		props.setInput({
 			...props.input,
