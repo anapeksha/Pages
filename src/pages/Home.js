@@ -1,4 +1,5 @@
 import DriveFileRenameOutlineRoundedIcon from "@mui/icons-material/DriveFileRenameOutlineRounded";
+import VisibilityRoundedIcon from "@mui/icons-material/VisibilityRounded";
 import { Box, IconButton, Typography } from "@mui/material";
 import "animate.css";
 import React, { useEffect, useState } from "react";
@@ -11,22 +12,51 @@ const Home = () => {
 		button: "",
 	});
 
+	const [buttonAnimation, setAnimation] = useState({
+		view: "",
+		add: "",
+	});
+
 	const navigate = useNavigate();
 
-	const handleClick = () => {
+	const handleClickWrite = () => {
 		addClasses({
 			text: "animate__animated animate__fadeOutUp animate__slow",
 			button:
 				"animate__animated animate__fadeOutDown animate__slow home-button",
 		});
 
+		setAnimation({
+			view: "",
+			add: "animate__animated animate__bounce animate__faster",
+		});
+
 		setTimeout(() => {
-			handleNavigate();
+			handleNavigateAdd();
 		}, 2100);
 	};
 
-	const handleNavigate = () => {
+	const handleClickView = () => {
+		addClasses({
+			text: "animate__animated animate__fadeOutUp animate__slow",
+			button:
+				"animate__animated animate__fadeOutDown animate__slow home-button",
+		});
+		setAnimation({
+			view: "animate__animated animate__bounce animate__faster",
+			add: "",
+		});
+		setTimeout(() => {
+			handleNavigateView();
+		}, 2100);
+	};
+
+	const handleNavigateAdd = () => {
 		navigate("add-note");
+	};
+
+	const handleNavigateView = () => {
+		navigate("view-note");
 	};
 
 	useEffect(() => {
@@ -44,7 +74,7 @@ const Home = () => {
 						Welcome to Pages
 					</Typography>
 					<Typography variant="h6" className="home-welcome-text">
-						Start Writing
+						Start Writing / View Notes
 					</Typography>
 				</Box>
 				<Box className={animatedClass.button}>
@@ -54,9 +84,21 @@ const Home = () => {
 						color="inherit"
 						aria-label="write"
 						sx={{ mr: 2, color: "#a9ccff" }}
-						onClick={handleClick}
+						onClick={handleClickWrite}
+						className={buttonAnimation.add}
 					>
 						<DriveFileRenameOutlineRoundedIcon fontSize="large" />
+					</IconButton>
+					<IconButton
+						size="large"
+						edge="start"
+						color="inherit"
+						aria-label="write"
+						sx={{ mr: 2, color: "#a9ccff" }}
+						onClick={handleClickView}
+						className={buttonAnimation.view}
+					>
+						<VisibilityRoundedIcon fontSize="large" />
 					</IconButton>
 				</Box>
 			</Box>
