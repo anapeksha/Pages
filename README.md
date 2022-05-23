@@ -1,7 +1,6 @@
 ## Pages
 
 [![GPL v3.0 License][license-shield]][license-url]
-
 ![CI/CD](https://github.com/anapeksha/Pages/workflows/build/badge.svg)
 
 A note taking app
