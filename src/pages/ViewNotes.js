@@ -1,9 +1,9 @@
 import { Box, Grid } from "@mui/material";
+import "animate.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BasicCard from "../components/BasicCard";
 import { deleteNote } from "../redux/reducers/noteReducer";
-import "animate.css";
 import "../styles/view-notes.css";
 
 const ViewNotes = () => {
@@ -20,7 +20,6 @@ const ViewNotes = () => {
 					<BasicCard
 						title={note.title}
 						date={note.date}
-						content={note.content}
 						key={i}
 						handleDelete={() => dispatch(deleteNote(note))}
 					/>
