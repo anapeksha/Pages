@@ -1,7 +1,7 @@
 ## Pages
 
 [![MIT License][license-shield]][license-url]
-![GITHIB workflow status](https://github.com/anapeksha/Pages/workflows/build/badge.svg)
+![GITHUB workflow status](https://github.com/anapeksha/Pages/workflows/build/badge.svg)
 
 A note taking app
 
