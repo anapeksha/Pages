@@ -2,6 +2,7 @@ import { Box, Grid } from "@mui/material";
 import "animate.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import BasicCard from "../components/BasicCard";
 import { deleteNote } from "../redux/reducers/noteReducer";
 import "../styles/view-notes.css";
@@ -9,19 +10,20 @@ import "../styles/view-notes.css";
 const ViewNotes = () => {
 	//@ts-ignore
 	const notes = useSelector((state) => state.note.notes);
-
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	const notesDisplay = () => {
 		//@ts-ignore
 		return notes.map((note, i) => {
 			return (
-				<Grid item xs={6} sm={6} md={6}>
+				<Grid item xs={"auto"} sm={"auto"} md={"auto"}>
 					<BasicCard
 						title={note.title}
 						date={note.date}
 						key={i}
 						handleDelete={() => dispatch(deleteNote(note))}
+						handleCardClick={() => navigate("/view-notes-full")}
 					/>
 				</Grid>
 			);
