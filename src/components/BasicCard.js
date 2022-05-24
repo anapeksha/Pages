@@ -1,3 +1,4 @@
+import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -22,9 +23,17 @@ const BasicCard = (props) => {
 					aria-label="delete-note"
 					size="small"
 					onClick={props.handleDelete}
-					sx={{ mr: 2, color: "#a9ccff" }}
+					sx={{ color: "#a9ccff" }}
 				>
 					<DeleteIcon fontSize="inherit" />
+				</IconButton>
+				<IconButton
+					aria-label="delete-note"
+					size="small"
+					onClick={props.handleCardClick}
+					sx={{ color: "#a9ccff" }}
+				>
+					<ArrowCircleRightRoundedIcon fontSize="inherit" />
 				</IconButton>
 			</CardActions>
 		</Card>
