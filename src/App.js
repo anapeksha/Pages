@@ -11,7 +11,7 @@ const App = () => {
 				<Route path="/Pages" element={<Home />} />
 				<Route path="/Pages/add-note" element={<AddNote />} />
 				<Route path="/Pages/view-note" element={<ViewNotes />} />
-				<Route path="/Pages/view-note-full" element={<ViewNotesFull />} />
+				<Route path="/Pages/view-note/:id" element={<ViewNotesFull />} />
 			</Routes>
 		</div>
 	);
