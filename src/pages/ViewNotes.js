@@ -17,7 +17,7 @@ const ViewNotes = () => {
 		//@ts-ignore
 		return notes.map((note, i) => {
 			return (
-				<Grid item xs={"auto"} sm={"auto"} md={"auto"}>
+				<Grid item xs={12} sm={12} md={6}>
 					<BasicCard
 						title={note.title}
 						date={note.date}
@@ -41,7 +41,7 @@ const ViewNotes = () => {
 				}}
 				className="animate__animated animate__fadeIn animate__slower"
 			>
-				<Grid container spacing={0.75}>
+				<Grid sx={{ flexGrow: 1 }} container spacing={1}>
 					{notesDisplay()}
 				</Grid>
 			</Box>
