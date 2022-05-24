@@ -1,6 +1,5 @@
 import { Box, Button, FormGroup, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import "animate.css";
 import format from "date-format";
 import { nanoid } from "nanoid";
 import React from "react";
