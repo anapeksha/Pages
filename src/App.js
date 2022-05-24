@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { Home, AddNote, ViewNotes } from "./pages";
+import { AddNote, Home, ViewNotes, ViewNotesFull } from "./pages";
 
 const App = () => {
 	return (
@@ -11,6 +11,7 @@ const App = () => {
 				<Route path="/Pages" element={<Home />} />
 				<Route path="/Pages/add-note" element={<AddNote />} />
 				<Route path="/Pages/view-note" element={<ViewNotes />} />
+				<Route path="/Pages/view-note-full" element={<ViewNotesFull />} />
 			</Routes>
 		</div>
 	);
