@@ -23,7 +23,7 @@ const ViewNotes = () => {
 						date={note.date}
 						key={i}
 						handleDelete={() => dispatch(deleteNote(note))}
-						handleCardClick={() => navigate("/view-notes-full")}
+						handleCardClick={() => navigate(`/Pages/view-note/${note.id}`)}
 					/>
 				</Grid>
 			);
