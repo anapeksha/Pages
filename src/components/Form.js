@@ -2,7 +2,7 @@ import { Box, Button, FormGroup, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import format from "date-format";
 import { nanoid } from "nanoid";
-import React from "react";
+import React, { useState } from "react";
 import "../styles/form.css";
 
 const CustomTextField = styled(TextField)({
@@ -44,6 +44,9 @@ const CustomButton = styled(Button)({
 });
 
 const Form = (props) => {
+	const [successClass, setSuccessClass] = useState(
+		"form animate__animated animate__zoomIn animate__fast"
+	);
 	const handleChange = (event) => {
 		const name = event.target.name;
 		const value = event.target.value;
@@ -57,9 +60,15 @@ const Form = (props) => {
 		});
 	};
 
+	const handleClick = () => {
+		setSuccessClass(
+			"form animate__animated animate__backOutRight animate__fast"
+		);
+	};
+
 	return (
 		<Box className="form-body">
-			<Box className="form animate__animated animate__zoomIn animate__fast">
+			<Box className={successClass}>
 				<Typography
 					variant="h5"
 					style={{ textAlign: "center", color: "#a9ccff" }}
@@ -122,6 +131,7 @@ const Form = (props) => {
 								color: "#212122",
 								fontWeight: "700",
 							}}
+							onClick={handleClick}
 						>
 							Add
 						</CustomButton>
