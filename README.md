@@ -89,7 +89,7 @@ corepack enable
 
 ## Usage
 
-The webapp can be used to keep notes right within your grasp. It comes with dark mode to keep your eyes strain free;
+The webapp can be used to keep notes right within your grasp. It comes with dark mode to keep your eyes strain free
 
 <p align="right">(<a href="#top">Back to top</a>)</p>
 
