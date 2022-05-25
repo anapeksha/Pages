@@ -31,7 +31,7 @@
 
 [![Product Screen Shot][product-screenshot]](https://github.com/anapeksha/Pages)
 
-A simple notes taking app
+A notes taking web app which you can use in place of your messy stickies
 
 <p align="right">(<a href="#top">Back to top</a>)</p>
 
