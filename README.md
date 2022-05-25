@@ -29,7 +29,7 @@
 
 ## About The Project
 
-[![Product Screen Shot][product-screenshot]](https://github.com/anapeksha/password-generator-frontend)
+[![Product Screen Shot][product-screenshot]](https://github.com/anapeksha/Pages)
 
 A simple notes taking app
 
@@ -65,6 +65,7 @@ corepack enable
    git clone https://github.com/anapeksha/Pages.git
    ```
 2. Install NPM packages
+
    ```sh
    yarn install
    ```
@@ -105,3 +106,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 [license-shield]: https://img.shields.io/github/license/anapeksha/Pages.svg?style=plastic
 [license-url]: https://github.com/anapeksha/Pages/blob/main/LICENSE
+[product-screenshot]: https://github.com/anapeksha/Pages/blob/main/screenshots/project-screenshot.png
