@@ -3,6 +3,7 @@ import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
+import BasicBreadcrumbs from "./BasicBreadcrumbs";
 
 const Navbar = () => {
 	return (
@@ -18,11 +19,19 @@ const Navbar = () => {
 							<DriveFileRenameOutlineTwoToneIcon style={{ color: "#a9ccff" }} />
 						</Link>
 					</Box>
-					<Link to="/Pages" style={{ textDecoration: "none" }}>
-						<Typography variant="h6" component="div" sx={{ color: "#a9ccff" }}>
+					<Typography
+						variant="h6"
+						component="div"
+						sx={{ flexGrow: 1 }}
+					>
+						<Link
+							to="/Pages"
+							style={{ textDecoration: "none", color: "#a9ccff" }}
+						>
 							<strong>Pages</strong>
-						</Typography>
-					</Link>
+						</Link>
+					</Typography>
+					<BasicBreadcrumbs />
 				</Toolbar>
 			</AppBar>
 		</Box>
