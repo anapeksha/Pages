@@ -70,15 +70,13 @@ corepack enable
    yarn install
    ```
 
-3. The backend for the project is [here](https://github.com/anapeksha/password-generator-backend)
-
-4. Start the Development server
+3. Start the Development server
 
    ```sh
    yarn start
    ```
 
-5. Create a production build
+4. Create a production build
    ```sh
    yarn build
    ```
