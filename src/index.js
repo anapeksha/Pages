@@ -1,3 +1,4 @@
+import { GlobalStyles } from "@mui/material";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
@@ -7,7 +8,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import App from "./App";
 import { store } from "./redux/store";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import "./styles/index.css";
 
 const persistor = persistStore(store);
 
@@ -17,6 +17,15 @@ root.render(
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
 				<BrowserRouter>
+					<GlobalStyles
+						styles={{
+							body: {
+								backgroundColor: "#212122",
+								WebkitFontSmoothing: "antialiased",
+								MozOsxFontSmoothing: "grayscale",
+							},
+						}}
+					/>
 					<App />
 				</BrowserRouter>
 			</PersistGate>

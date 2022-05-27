@@ -1,47 +1,8 @@
-import { Box, Button, FormGroup, TextField, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box, FormGroup, Typography } from "@mui/material";
 import format from "date-format";
 import { nanoid } from "nanoid";
 import React, { useState } from "react";
-import "../styles/form.css";
-
-const CustomTextField = styled(TextField)({
-	"& .MuiOutlinedInput-root": {
-		"& fieldset": {
-			borderColor: "#a9ccff",
-		},
-		"&.Mui-focused fieldset": {
-			borderColor: "#a9ccff",
-		},
-		"&:hover fieldset": {
-			borderColor: "#a9ccff",
-		},
-		"& .MuiInput-underline:after": {
-			borderColor: "#a9ccff",
-		},
-	},
-});
-
-const CustomButton = styled(Button)({
-	padding: "6px 12px",
-	border: "1px solid",
-	lineHeight: 1.5,
-	backgroundColor: "#a9ccff",
-	borderColor: "#a9ccff",
-	"&:hover": {
-		backgroundColor: "#95b9e7",
-		borderColor: "#95b9e7",
-		boxShadow: "none",
-	},
-	"&:active": {
-		boxShadow: "none",
-		backgroundColor: "#8aabd6",
-		borderColor: "#8aabd6",
-	},
-	"&:focus": {
-		boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
-	},
-});
+import { CustomButton, CustomTextField, Wrapper } from "../styles";
 
 const Form = (props) => {
 	const [successClass, setSuccessClass] = useState(
@@ -67,7 +28,7 @@ const Form = (props) => {
 	};
 
 	return (
-		<Box className="form-body">
+		<Wrapper>
 			<Box className={successClass}>
 				<Typography
 					variant="h5"
@@ -76,7 +37,10 @@ const Form = (props) => {
 					Add Page
 				</Typography>
 				<FormGroup>
-					<form onSubmit={props.handleSubmit}>
+					<form
+						onSubmit={props.handleSubmit}
+						style={{ display: "flex", flexDirection: "column" }}
+					>
 						<CustomTextField
 							size="medium"
 							label="Title"
@@ -138,7 +102,7 @@ const Form = (props) => {
 					</form>
 				</FormGroup>
 			</Box>
-		</Box>
+		</Wrapper>
 	);
 };
 

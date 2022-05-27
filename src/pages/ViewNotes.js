@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import BasicCard from "../components/BasicCard";
 import { deleteNote } from "../redux/reducers/noteReducer";
-import "../styles/view-notes.css";
+import { Wrapper } from "../styles";
 
 const ViewNotes = () => {
 	//@ts-ignore
@@ -31,7 +31,7 @@ const ViewNotes = () => {
 	};
 
 	return (
-		<div className="view-notes-body">
+		<Wrapper>
 			<Box
 				sx={{
 					height: "75vh",
@@ -45,7 +45,7 @@ const ViewNotes = () => {
 					{notesDisplay()}
 				</Grid>
 			</Box>
-		</div>
+		</Wrapper>
 	);
 };
 

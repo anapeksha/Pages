@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import "../styles/view-notes-full.css";
+import { Notes, Wrapper } from "../styles";
 
 const ViewNotesFull = () => {
 	const { id } = useParams();
@@ -26,13 +26,17 @@ const ViewNotesFull = () => {
 				});
 				return true;
 			}
+			return false;
 		});
 	}, []);
 
 	return (
-		<div className="view-notes-full-body animate__animated animate__bounceIn animate__fast">
-			<Box className="view-notes-full">
-				<Box className="note-bodies">
+		<Wrapper
+			className="animate__animated animate__bounceIn animate__fast"
+			style={{ margin: "1.5vw" }}
+		>
+			<Notes className="view-notes-full">
+				<Box>
 					<Typography
 						variant="h4"
 						gutterBottom
@@ -42,16 +46,19 @@ const ViewNotesFull = () => {
 						{note.title}
 					</Typography>
 				</Box>
-				<Box className="note-bodies">
+				<Box>
 					<Typography
 						variant="subtitle2"
 						gutterBottom
 						style={{ color: "#a9ccff" }}
 					>
-						{note.date}
+						{
+							// @ts-ignore
+							note.date
+						}
 					</Typography>
 				</Box>
-				<Box className="note-bodies">
+				<Box>
 					<Typography
 						variant="h6"
 						gutterBottom
@@ -61,8 +68,8 @@ const ViewNotesFull = () => {
 						{note.content}
 					</Typography>
 				</Box>
-			</Box>
-		</div>
+			</Notes>
+		</Wrapper>
 	);
 };
 

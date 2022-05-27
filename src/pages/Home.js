@@ -1,9 +1,9 @@
 import DriveFileRenameOutlineRoundedIcon from "@mui/icons-material/DriveFileRenameOutlineRounded";
 import VisibilityRoundedIcon from "@mui/icons-material/VisibilityRounded";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/home.css";
+import { CustomIconButton, Wrapper } from "../styles";
 
 const Home = () => {
 	const [animatedClass, addClasses] = useState({
@@ -67,40 +67,37 @@ const Home = () => {
 
 	return (
 		<div>
-			<Box className="home-body">
-				<Box className={animatedClass.text}>
-					<Typography variant="h2" className="home-welcome-text">
-						Welcome to Pages
-					</Typography>
-					<Typography variant="h6" className="home-welcome-text">
-						Start Writing / View Notes
-					</Typography>
+			<Wrapper>
+				<Box
+					className={animatedClass.text}
+					style={{ color: "#a9ccff", textAlign: "center" }}
+				>
+					<Typography variant="h2">Welcome to Pages</Typography>
+					<Typography variant="h6">Start Writing / View Notes</Typography>
 				</Box>
 				<Box className={animatedClass.button}>
-					<IconButton
+					<CustomIconButton
 						size="large"
 						edge="start"
 						color="inherit"
 						aria-label="write"
-						sx={{ mr: 2, color: "#a9ccff" }}
 						onClick={handleClickWrite}
 						className={buttonAnimation.add}
 					>
 						<DriveFileRenameOutlineRoundedIcon fontSize="large" />
-					</IconButton>
-					<IconButton
+					</CustomIconButton>
+					<CustomIconButton
 						size="large"
 						edge="start"
 						color="inherit"
 						aria-label="write"
-						sx={{ mr: 2, color: "#a9ccff" }}
 						onClick={handleClickView}
 						className={buttonAnimation.view}
 					>
 						<VisibilityRoundedIcon fontSize="large" />
-					</IconButton>
+					</CustomIconButton>
 				</Box>
-			</Box>
+			</Wrapper>
 		</div>
 	);
 };
